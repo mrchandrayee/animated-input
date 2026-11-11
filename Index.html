@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Input</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="Style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="input-wrap">
+  <input class="inp" type="text" id="name" placeholder=" " maxlength="40" autocomplete="off">
+  <label class="lbl" for="name">Your name</label>
+  <div class="line"></div>
+  <div class="dot"></div>
+  <span class="count" id="count">0 / 40</span>
+</div>
+
+<script>
+  const inp = document.getElementById('name');
+  const count = document.getElementById('count');
+  inp.addEventListener('input', () => {
+    count.textContent = `${inp.value.length} / 40`;
+  });
+</script>
+
+</body>
+</html>
